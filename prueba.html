@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario</title>
+	<meta name="author" content="David Carrillo">
+	<meta name="description" content="Descripción de la Prueba">
+	<meta name="keywords" content="palabrauno, palabra2, par de palabras">
+</head>
+<body>
+<center>
+	<h1><b>Restaurante YAVIRAC </b>, Todo Plato a solo $0.75</h1>
+	<form>
+		<table width="650" height="200" border="1">
+			<caption>Restaurante</caption>
+			
+				<tr>
+					<td>
+						<img src="chicharron.jpg" id="restaurante" width="300" height="300">
+					</td>
+					<td>
+						<label># Chicharron</label><br>
+						<label># Guatitas</label><br>
+						<label>Total</label><br>
+					</td>
+					<td>
+						<input type="text" id="numChicharron" onchange="suma();" onkeyup="imagen(1); "><br>
+						<input type="text" id="numGuatita" onchange="suma();" onkeyup="imagen(2); "><br>
+						<input type="text" id="total" onchange="suma();"><br>
+					</td>
+				</tr>
+		</table>
+	</form>
+</center>	
+</body>
+<script>
+	function suma(){
+		var numChicharron = document.getElementById("numChicharron").value;
+		var numGuatita = document.getElementById("numGuatita").value;
+		
+		var a = parseInt(numChicharron);
+		var b = parseInt(numGuatita);
+		
+		var total = a + b;
+		document.getElementById("total").value = total; 
+	}
+
+	function imagen(valor){
+		if (valor==1) {
+			document.images.restaurante.src="chicharron.jpg";	
+		}
+		if(valor==2){
+			document.images.restaurante.src="guatita.jpg";	
+		}
+	}
+
+</script>
+<footer>
+<p>Created By | <b>David Carrillo</b> </p>	
+</footer>
+</html>
